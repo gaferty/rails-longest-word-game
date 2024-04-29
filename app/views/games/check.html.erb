@@ -1,0 +1,15 @@
+
+<div class="container bg-light rounded border border-color-dark pt-2 pb-3 mt-5">
+  <div class="col">
+    <div class="row text-center">
+      <%if @success%>
+        <h2> Congratulations !!!!</h2>
+      <%else%>
+          <h2> Oh No !!!!</h2>
+      <%end%>
+    </div>
+    <div class="row text-center">
+      <p> Your answer <strong><%= @user_letters%></strong> <%= @letter_check%> <p>
+    </div>
+  </div>
+</div>

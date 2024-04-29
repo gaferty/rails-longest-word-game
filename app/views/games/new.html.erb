@@ -1,0 +1,25 @@
+
+<div class="container w-80 bg-light rounded border border-color-dark">
+
+  <div class="col w-80">
+    <div class="row text-center">
+      <h3> Make a word out of the letters below and submit it </h3>
+    </div>
+    <div class="row">
+      <% @letters.each do |letter|%>
+      <div class="col-1 bg-primary text-center rounded m-1 text-white">
+        <%= letter%>
+      </div>
+      <%end%>
+    </div>
+    <div class="row d-flex justify-content-center">
+      <form action ='/check' data-turbo="false" class="row d-flex justify-content-center w-50 m-1">
+        <input types='text' name = 'answer' placeholder = 'words'>
+        <%= hidden_field_tag :authenticity_token, form_authenticity_token %>
+        <%= hidden_field_tag :system, @letters %>
+        <input type='submit' class='btn btn-primary'>
+      </form>
+    </div>
+  </div>
+
+</div>
